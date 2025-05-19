@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Seu Nome | Portfólio</title>
+  <title>Haslan | Portfólio</title>
   <link rel="stylesheet" href="styles/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="img.css" />
+  <link rel="stylesheet" href="styles/about.css" />
 </head>
 <body>
     <section class="hero">
@@ -16,9 +17,9 @@
     </section>
 
   <header>
-    <AboutMe />
-    <h1>Haslan Nascimento</h1>
-    <p>Desenvolvedor Front-End e Back-end</p>
+    <section id="about"></section>
+    <h1>Titulo do Header</h1>
+    <p>Conteudo do header</p>
   </header>
 
   <section id="sobre">
@@ -37,5 +38,13 @@
   </section>
 
   <script src="script.js"></script>
+    <script>
+    fetch('components/about.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('about').innerHTML = data;
+      });
+  </script>
+
 </body>
 </html>
