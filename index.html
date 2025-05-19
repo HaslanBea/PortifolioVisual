@@ -10,6 +10,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="img.css" />
   <link rel="stylesheet" href="styles/about.css" />
+  <link rel="stylesheet" href="styles/experienciaacademy.css" />
+
 </head>
 <body>
     <section class="hero">
@@ -18,6 +20,7 @@
 
   <header>
     <section id="about"></section>
+    <section id="experiencia-academy" style="margin: 80px;"></section>
     <h1>Titulo do Header</h1>
     <p>Conteudo do header</p>
   </header>
@@ -37,14 +40,24 @@
     <p>Email, GitHub, LinkedIn...</p>
   </section>
 
-  <script src="script.js"></script>
-    <script>
-    fetch('components/about.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('about').innerHTML = data;
-      });
-  </script>
+<script>
+  // Carrega o componente About
+  fetch('components/about.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('about').innerHTML = data;
+    });
+
+  // Carrega o componente Experiência Academy
+
+  fetch('components/experienciaacademy.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('experiencia-academy').innerHTML = data;
+    });
+
+</script>
+
 
 </body>
 </html>
