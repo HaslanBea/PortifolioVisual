@@ -4,27 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Haslan | Portfólio</title>
-  <link rel="stylesheet" href="styles/styles.css" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="img.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="styles/img.css" />
   <link rel="stylesheet" href="styles/about.css" />
   <link rel="stylesheet" href="styles/experienciaacademy.css" />
-
+  <link rel="stylesheet" href="styles/gifname.css" />
+  <link rel="stylesheet" href="styles/carrossel.css" />
 </head>
 <body>
-    <section class="hero">
-        <img src="/img/moon.jpg" alt="Imagem linda" style="width: 100%;height: 960px;" />
-    </section>
+  <!-- Seção hero -->
+  <section class="hero">
+    <img src="/img/Portifólio (2).png" alt="Imagem linda" class="hero-image" />
+  </section>
 
+  <!-- Header + componentes -->
   <header>
     <section id="about"></section>
     <section id="experiencia-academy" style="margin: 80px;"></section>
-    <h1>Titulo do Header</h1>
-    <p>Conteudo do header</p>
+    <section id="gifname"></section>
+    <section id="carrossel"></section>
   </header>
 
+  <!-- Conteúdo fixo -->
   <section id="sobre">
     <h2>Sobre Mim</h2>
     <p>Aqui você conta quem é, o que estuda, o que curte fazer etc.</p>
@@ -40,24 +48,40 @@
     <p>Email, GitHub, LinkedIn...</p>
   </section>
 
-<script>
-  // Carrega o componente About
-  fetch('components/about.html')
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById('about').innerHTML = data;
-    });
+  <!-- Scripts para carregar componentes e carrossel -->
+  <script>
+    // Componente About
+    fetch('components/about.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('about').innerHTML = data;
+      });
 
-  // Carrega o componente Experiência Academy
+    // Componente Experiência
+    fetch('components/experienciaacademy.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('experiencia-academy').innerHTML = data;
+      });
 
-  fetch('components/experienciaacademy.html')
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById('experiencia-academy').innerHTML = data;
-    });
+    // Componente GIFName
+    fetch('components/gifname.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('gifname').innerHTML = data;
+      });
 
-</script>
+    // Componente Carrossel com script dinâmico
+    fetch('components/carrossel.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('carrossel').innerHTML = data;
 
-
+        // Carrega o JS do carrossel só depois que o HTML foi inserido
+        const script = document.createElement('script');
+        script.src = 'scripts/carrossel.js';
+        document.body.appendChild(script);
+      });
+  </script>
 </body>
 </html>

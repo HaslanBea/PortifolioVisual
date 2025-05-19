@@ -1,6 +1,6 @@
 .timeline {
   padding: 80px 10%;
-  background-color: #8696A0;
+  background-image: url('/img/moon.jpg');
   color: #fff;
   font-family: 'Raleway', sans-serif;
 }
@@ -131,7 +131,7 @@
 }
 
 .content-box:hover .date {
-  background-color: #555;
+  background-color: #000000;
 }
 
 .content-box .icon {
