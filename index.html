@@ -29,7 +29,6 @@
     <section id="about"></section>
     <section id="experiencia-academy" style="margin: 80px;"></section>
     <section id="gifname"></section>
-    <section id="carrossel"></section>
   </header>
 
   <!-- Conteúdo fixo -->
@@ -71,17 +70,6 @@
         document.getElementById('gifname').innerHTML = data;
       });
 
-    // Componente Carrossel com script dinâmico
-    fetch('components/carrossel.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('carrossel').innerHTML = data;
-
-        // Carrega o JS do carrossel só depois que o HTML foi inserido
-        const script = document.createElement('script');
-        script.src = 'scripts/carrossel.js';
-        document.body.appendChild(script);
-      });
   </script>
 </body>
 </html>
