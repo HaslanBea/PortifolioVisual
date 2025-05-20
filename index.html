@@ -33,8 +33,6 @@
 
   <!-- Conteúdo fixo -->
   <section id="sobre">
-    <h2>Sobre Mim</h2>
-    <p>Aqui você conta quem é, o que estuda, o que curte fazer etc.</p>
   </section>
 
   <section id="projetos">
@@ -68,6 +66,17 @@
       .then(res => res.text())
       .then(data => {
         document.getElementById('gifname').innerHTML = data;
+      });
+
+        // Componente Projetos
+    fetch('components/projetos.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('projetos').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Erro ao carregar projetos:', error);
+        document.getElementById('projetos').innerHTML = '<p>Erro ao carregar projetos. Atualize a página.</p>';
       });
 
   </script>
