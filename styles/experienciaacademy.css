@@ -144,3 +144,8 @@
 .content-box:hover .icon {
   color: #ffd3dc;
 }
+
+#experiencia-academy {
+  scroll-margin-top: 20px; /* Espaço para não cortar conteúdo */
+  transition: all 0.3s ease;
+}
